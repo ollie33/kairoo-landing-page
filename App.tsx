@@ -18,14 +18,14 @@ export default function App() {
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <span className="text-2xl">🦘</span>
+          <span className="text-2xl"></span>
           <h1 className="text-2xl font-bold text-orange-600">Kairoo</h1>
         </div>
         <Button 
           onClick={handleGetEarlyAccess}
           className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
         >
-          Get Early Access ✨
+          Get Early Access
         </Button>
       </header>
 
@@ -33,7 +33,7 @@ export default function App() {
       <section className="container mx-auto px-4 py-16 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            We are changing the way people connect. Forever! 🌟
+            We are changing the way people connect. Forever!
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
             Kairoo helps you meet like minded people and explore unique places - Building genuine experiences both at home and around the world
@@ -42,7 +42,7 @@ export default function App() {
             onClick={handleGetEarlyAccess}
             className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            Start Connecting Now 🚀
+            Start Connecting Now
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
@@ -194,15 +194,15 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              About Kairoo 🦘
+              About Kairoo
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-left">
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We understand the challenge of building meaningful connections in a new city. Our team of social connection experts and technology innovators created Kairoo to solve the modern problem of urban isolation. 🌆
+                  We understand the challenge of building meaningful connections in a new city. Our team of social connection experts and technology innovators created Kairoo to solve the modern problem of urban isolation.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Unlike superficial dating apps, we focus on building authentic friendships and community connections through shared interests and real-world experiences. Our mission is to make every new city feel like home. 🏡
+                  Unlike superficial dating apps, we focus on building authentic friendships and community connections through shared interests and real-world experiences. Our mission is to make every new city feel like home.
                 </p>
               </div>
               <div className="relative">
@@ -214,7 +214,7 @@ export default function App() {
                 {/* Overlay cute team emojis */}
                 <div className="absolute inset-0 bg-gradient-to-t from-orange-100/50 to-transparent rounded-2xl flex items-center justify-center">
                   <div className="text-5xl opacity-80">
-                    👨‍💻👩‍💻👨‍🎨👩‍🎨
+                    
                   </div>
                 </div>
               </div>
@@ -227,18 +227,18 @@ export default function App() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <div className="text-6xl mb-6">🎉</div>
+            <div className="text-6xl mb-6"></div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Ready to Start Connecting?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Join thousands of people who've found their community through Kairoo. 👥
+              Join thousands of people who've found their community through Kairoo.
             </p>
             <Button 
               onClick={handleGetEarlyAccess}
               className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Get Early Access Now 🚀
+              Get Early Access Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -251,15 +251,15 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <span className="text-xl">🦘</span>
+                <span className="text-xl"></span>
                 <h3 className="text-xl font-bold text-orange-400">Kairoo</h3>
               </div>
               <p className="text-gray-400">
-                Building real connections in new cities. 💫
+                Building real connections in new cities.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Product 📱</h4>
+              <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-orange-400 transition-colors">Features</a></li>
                 <li><a href="#" className="hover:text-orange-400 transition-colors">How it Works</a></li>
@@ -267,7 +267,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company 🏢</h4>
+              <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-orange-400 transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-orange-400 transition-colors">Careers</a></li>
@@ -275,7 +275,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Support 🤝</h4>
+              <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-orange-400 transition-colors">Help Center</a></li>
                 <li><a href="#" className="hover:text-orange-400 transition-colors">Contact</a></li>
@@ -284,7 +284,7 @@ export default function App() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Kairoo. All rights reserved. Made with ❤️</p>
+            <p>&copy; 2025 Kairoo. All rights reserved. Made with love</p>
           </div>
         </div>
       </footer>
