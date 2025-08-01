@@ -36,7 +36,7 @@ export default function App() {
             We are changing the way people connect. Forever! 🌟
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Kairoo helps you meet like-minded people and explore unique places – building real experiences, not just superficial swipes. 💫
+            Kairoo helps you meet like minded people and explore unique places - Building genuine experiences both at home and around the world
           </h2>
           <Button 
             onClick={handleGetEarlyAccess}
