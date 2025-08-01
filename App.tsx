@@ -3,6 +3,7 @@ import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { EarlyAccessModal } from "./components/EarlyAccessModal";
+import AdminPanel from "./components/AdminPanel";
 import { ArrowRight, Star } from "lucide-react";
 
 export default function App() {
@@ -309,6 +310,9 @@ export default function App() {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
+
+      {/* Admin Panel */}
+      <AdminPanel />
     </div>
   );
 }

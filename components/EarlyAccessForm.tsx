@@ -33,21 +33,9 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
         localStorage.setItem('kairoo_early_access', JSON.stringify(existingEmails));
       }
 
-      // 嘗試提交到 Netlify（可選）
-      try {
-        const formData = new FormData();
-        formData.append('form-name', 'early-access');
-        formData.append('email', email);
-
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData as any).toString(),
-        });
-      } catch (netlifyError) {
-        // Netlify 提交失敗也沒關係，localStorage 已經保存了
-        console.log('Netlify submission failed, but email saved locally');
-      }
+      // 目前使用 localStorage 儲存，你可以手動查看
+      console.log('Email saved to localStorage:', email);
+      console.log('All saved emails:', JSON.parse(localStorage.getItem('kairoo_early_access') || '[]'));
       
       setIsSubmitted(true);
     } catch (err) {
