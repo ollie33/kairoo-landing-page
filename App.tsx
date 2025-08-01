@@ -137,14 +137,14 @@ export default function App() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            Support by
+            Supported by
           </h2>
           
           <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto items-center">
             {/* Logo 1 */}
             <div className="flex justify-center">
               <img 
-                src="/EIA-LOGO.jpg" 
+                src="/EIA.png" 
                 alt="EIA Logo" 
                 className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
