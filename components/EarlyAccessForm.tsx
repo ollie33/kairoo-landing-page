@@ -16,6 +16,30 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
   const [showFeedback, setShowFeedback] = useState(false);
   const [error, setError] = useState('');
 
+  const sendWelcomeEmail = async (userEmail: string) => {
+    try {
+      const response = await fetch('/.netlify/functions/send-welcome-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: userEmail
+        })
+      });
+
+      if (!response.ok) {
+        console.warn('Failed to send welcome email, but continuing...');
+      } else {
+        const result = await response.json();
+        console.log('Welcome email sent successfully:', result);
+      }
+    } catch (error) {
+      console.error('Error sending welcome email:', error);
+      // 即使郵件發送失敗，我們仍然繼續流程
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -39,11 +63,14 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
       console.log('Email saved to localStorage:', email);
       console.log('All saved emails:', JSON.parse(localStorage.getItem('kairoo_early_access') || '[]'));
       
+      // 發送歡迎郵件
+      await sendWelcomeEmail(email);
+      
       setIsSubmitted(true);
-      // 延遲顯示回饋表單
+      // 延遲顯示回饋表單（可選）
       setTimeout(() => {
         setShowFeedback(true);
-      }, 2000);
+      }, 3000);
     } catch (err) {
       setError('Something went wrong. Please try again.');
     } finally {
@@ -58,14 +85,19 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
           <CheckCircle className="h-12 w-12 text-green-500" />
         </div>
         <h3 className="text-2xl font-bold text-green-800 mb-2">
-          You're on the list! 🎉
+          Welcome to Kairoo! 🎉
         </h3>
         <p className="text-green-700 mb-4">
-          We'll notify you as soon as Kairoo is ready. Get ready to start connecting!
+          We've sent you a welcome email! Check your inbox for exclusive updates and behind-the-scenes content.
         </p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+          <p className="text-blue-700 text-sm">
+            📧 Check your email: <strong>{email}</strong>
+          </p>
+        </div>
         <div className="flex items-center justify-center">
           <div className="animate-pulse text-orange-600">
-            <p className="text-sm">Preparing feedback form...</p>
+            <p className="text-sm">Want to help us make Kairoo even better?</p>
           </div>
         </div>
       </Card>

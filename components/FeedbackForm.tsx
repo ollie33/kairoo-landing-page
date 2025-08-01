@@ -113,10 +113,10 @@ export function FeedbackForm({ userEmail, onClose, className = '' }: FeedbackFor
           <MessageSquare className="h-12 w-12 text-orange-500" />
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          Help us make Kairoo better! 🚀
+          Help us make Kairoo even better! 🚀
         </h3>
         <p className="text-gray-600">
-          We'd love to hear your thoughts. What would you like to see in Kairoo?
+          Your feedback is optional but incredibly valuable. What would you love to see in Kairoo?
         </p>
       </div>
 
