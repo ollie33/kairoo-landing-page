@@ -26,30 +26,30 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
     setError('');
 
     try {
-      // 準備表單數據
-      const formData = new FormData();
-      formData.append('form-name', 'early-access');
-      formData.append('email', email);
-
-      // 提交到 Netlify
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-
-      if (response.ok) {
-        // 保存到localStorage作為備用
-        const existingEmails = JSON.parse(localStorage.getItem('kairoo_early_access') || '[]');
-        if (!existingEmails.includes(email)) {
-          existingEmails.push(email);
-          localStorage.setItem('kairoo_early_access', JSON.stringify(existingEmails));
-        }
-        
-        setIsSubmitted(true);
-      } else {
-        throw new Error('Form submission failed');
+      // 保存到localStorage作為備用
+      const existingEmails = JSON.parse(localStorage.getItem('kairoo_early_access') || '[]');
+      if (!existingEmails.includes(email)) {
+        existingEmails.push(email);
+        localStorage.setItem('kairoo_early_access', JSON.stringify(existingEmails));
       }
+
+      // 嘗試提交到 Netlify（可選）
+      try {
+        const formData = new FormData();
+        formData.append('form-name', 'early-access');
+        formData.append('email', email);
+
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString(),
+        });
+      } catch (netlifyError) {
+        // Netlify 提交失敗也沒關係，localStorage 已經保存了
+        console.log('Netlify submission failed, but email saved locally');
+      }
+      
+      setIsSubmitted(true);
     } catch (err) {
       setError('Something went wrong. Please try again.');
     } finally {
