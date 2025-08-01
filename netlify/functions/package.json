@@ -1,0 +1,9 @@
+{
+  "name": "kairoo-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for Kairoo landing page",
+  "main": "index.js",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  }
+} 

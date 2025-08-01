@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card } from './ui/card';
 import { CheckCircle, Mail, ArrowRight } from 'lucide-react';
+import { FeedbackForm } from './FeedbackForm';
 
 interface EarlyAccessFormProps {
   className?: string;
@@ -12,6 +13,7 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
   const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,6 +40,10 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
       console.log('All saved emails:', JSON.parse(localStorage.getItem('kairoo_early_access') || '[]'));
       
       setIsSubmitted(true);
+      // 延遲顯示回饋表單
+      setTimeout(() => {
+        setShowFeedback(true);
+      }, 2000);
     } catch (err) {
       setError('Something went wrong. Please try again.');
     } finally {
@@ -45,7 +51,7 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
     }
   };
 
-  if (isSubmitted) {
+  if (isSubmitted && !showFeedback) {
     return (
       <Card className={`p-8 text-center bg-green-50 border-green-200 ${className}`}>
         <div className="flex items-center justify-center mb-4">
@@ -57,17 +63,26 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
         <p className="text-green-700 mb-4">
           We'll notify you as soon as Kairoo is ready. Get ready to start connecting!
         </p>
-        <Button 
-          onClick={() => {
-            setIsSubmitted(false);
-            setEmail('');
-          }}
-          variant="outline"
-          className="border-green-300 text-green-700 hover:bg-green-100"
-        >
-          Add Another Email
-        </Button>
+        <div className="flex items-center justify-center">
+          <div className="animate-pulse text-orange-600">
+            <p className="text-sm">Preparing feedback form...</p>
+          </div>
+        </div>
       </Card>
+    );
+  }
+
+  if (showFeedback) {
+    return (
+      <FeedbackForm 
+        userEmail={email}
+        onClose={() => {
+          setShowFeedback(false);
+          setIsSubmitted(false);
+          setEmail('');
+        }}
+        className={className}
+      />
     );
   }
 
