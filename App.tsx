@@ -49,7 +49,7 @@ export default function App() {
         
         <div className="mt-16 relative">
           <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            src="/Cover.jpg"
             alt="Kairoo - Connect with like-minded people"
             className="rounded-2xl shadow-2xl mx-auto max-w-4xl w-full h-64 md:h-96 object-cover"
           />
