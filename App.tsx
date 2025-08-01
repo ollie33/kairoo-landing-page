@@ -100,7 +100,7 @@ export default function App() {
                 Discover Curated places and amazing events
               </h3>
               <p className="text-gray-600">
-                Find unique spots and experiences designed to bring people together.
+                
               </p>
             </Card>
 
@@ -113,7 +113,7 @@ export default function App() {
                 Enjoy a verified and authentic community
               </h3>
               <p className="text-gray-600">
-                Verified profiles and thoughtful moderation ensure genuine connections.
+                
               </p>
             </Card>
 
@@ -123,10 +123,10 @@ export default function App() {
                 <span className="text-2xl">📱</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Simple, Fast Onboarding
+                
               </h3>
               <p className="text-gray-600">
-                Download, swipe places you like, and start connecting immediately.
+                
               </p>
             </Card>
           </div>
