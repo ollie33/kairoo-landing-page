@@ -87,11 +87,24 @@ export default function App() {
                 No superficial and endless people swiping. With us you swipe what's important to you
               </h3>
               <p className="text-gray-600">
-                Personality based group matching to meet people with similar hobbies and passions
+                
               </p>
             </Card>
 
             {/* Feature 2 */}
+            <Card className="p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-md">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">📱</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Personality based group matching to meet people with similar hobbies and passions
+              </h3>
+              <p className="text-gray-600">
+                
+              </p>
+            </Card>
+
+            {/* Feature 3 */}
             <Card className="p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-md">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🗺️</span>
@@ -104,26 +117,13 @@ export default function App() {
               </p>
             </Card>
 
-            {/* Feature 3 */}
+            {/* Feature 4 */}
             <Card className="p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-md">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🛡️</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Enjoy a verified and authentic community
-              </h3>
-              <p className="text-gray-600">
-                
-              </p>
-            </Card>
-
-            {/* Feature 4 */}
-            <Card className="p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-md">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl">📱</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                
               </h3>
               <p className="text-gray-600">
                 
