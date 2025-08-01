@@ -60,7 +60,9 @@ export default function App() {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <div className="text-4xl mb-6">🏠➡️❤️</div>
+            <h2 className="text-4xl font-bold text-orange-600 mb-6">
+              The new, better way to meet people
+            </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
               Moving to a new city can feel isolating. Kairoo connects you with people who share your passions and helps you discover authentic places – making your new home feel like home, faster.
             </p>
