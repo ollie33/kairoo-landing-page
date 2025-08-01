@@ -87,7 +87,7 @@ export default function App() {
                 No superficial and endless people swiping. With us you swipe what's important to you
               </h3>
               <p className="text-gray-600">
-                
+                Personality based group matching to meet people with similar hobbies and passions
               </p>
             </Card>
 
