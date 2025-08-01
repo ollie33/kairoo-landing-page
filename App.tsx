@@ -4,7 +4,7 @@ import { Card } from "./components/ui/card";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { EarlyAccessModal } from "./components/EarlyAccessModal";
 import AdminPanel from "./components/AdminPanel";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -133,76 +133,58 @@ export default function App() {
         </div>
       </section>
 
-      {/* Social Proof */}
+      {/* Support by */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            What Our Users Say 💬
+            Support by
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Testimonial 1 */}
-            <Card className="p-8 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6 italic">
-                "I moved to San Francisco and felt so lost. Kairoo helped me find a hiking group that became my closest friends. Now the city feels like home!"
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center mr-4 text-2xl">
-                  👩‍💻
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Sarah M.</p>
-                  <p className="text-gray-600 text-sm">Software Engineer</p>
-                </div>
-              </div>
-            </Card>
+          <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto items-center">
+            {/* Logo 1 */}
+            <div className="flex justify-center">
+              <img 
+                src="/EIA-LOGO.jpg" 
+                alt="EIA Logo" 
+                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
 
-            {/* Testimonial 2 */}
-            <Card className="p-8 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6 italic">
-                "Unlike other apps, Kairoo connects you through shared interests and real activities. I've discovered amazing coffee shops and made genuine friendships."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-green-500 flex items-center justify-center mr-4 text-2xl">
-                  👨‍💼
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Michael R.</p>
-                  <p className="text-gray-600 text-sm">Marketing Manager</p>
-                </div>
-              </div>
-            </Card>
+            {/* Logo 2 */}
+            <div className="flex justify-center">
+              <img 
+                src="/beta.i.jpg" 
+                alt="Beta.i Logo" 
+                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
 
-            {/* Testimonial 3 */}
-            <Card className="p-8 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6 italic">
-                "The verification process made me feel safe, and the place-based matching is brilliant. I've explored so many hidden gems in my new city!"
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center mr-4 text-2xl">
-                  👩‍🎨
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Emma L.</p>
-                  <p className="text-gray-600 text-sm">Graphic Designer</p>
-                </div>
-              </div>
-            </Card>
+            {/* Logo 3 */}
+            <div className="flex justify-center">
+              <img 
+                src="/Santander.jpg" 
+                alt="Santander Logo" 
+                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+
+            {/* Logo 4 */}
+            <div className="flex justify-center">
+              <img 
+                src="/porto.jpg" 
+                alt="Porto Logo" 
+                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+
+            {/* Logo 5 */}
+            <div className="flex justify-center">
+              <img 
+                src="/U.porto.jpg" 
+                alt="U.porto Logo" 
+                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
           </div>
         </div>
       </section>
