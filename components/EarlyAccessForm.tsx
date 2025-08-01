@@ -26,18 +26,30 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
     setError('');
 
     try {
-      // 這裡可以集成真實的email服務，比如SendGrid、Mailchimp等
-      // 現在我們模擬一個API調用
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // 保存到localStorage作為備用
-      const existingEmails = JSON.parse(localStorage.getItem('kairoo_early_access') || '[]');
-      if (!existingEmails.includes(email)) {
-        existingEmails.push(email);
-        localStorage.setItem('kairoo_early_access', JSON.stringify(existingEmails));
+      // 準備表單數據
+      const formData = new FormData();
+      formData.append('form-name', 'early-access');
+      formData.append('email', email);
+
+      // 提交到 Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+
+      if (response.ok) {
+        // 保存到localStorage作為備用
+        const existingEmails = JSON.parse(localStorage.getItem('kairoo_early_access') || '[]');
+        if (!existingEmails.includes(email)) {
+          existingEmails.push(email);
+          localStorage.setItem('kairoo_early_access', JSON.stringify(existingEmails));
+        }
+        
+        setIsSubmitted(true);
+      } else {
+        throw new Error('Form submission failed');
       }
-      
-      setIsSubmitted(true);
     } catch (err) {
       setError('Something went wrong. Please try again.');
     } finally {
@@ -85,15 +97,18 @@ export function EarlyAccessForm({ className = '' }: EarlyAccessFormProps) {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form name="early-access" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
+        <input type="hidden" name="form-name" value="early-access" />
         <div>
           <Input
             type="email"
+            name="email"
             placeholder="Enter your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all"
             disabled={isSubmitting}
+            required
           />
           {error && (
             <p className="text-red-500 text-sm mt-2">{error}</p>
