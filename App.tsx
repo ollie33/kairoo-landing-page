@@ -33,7 +33,7 @@ export default function App() {
       <section className="container mx-auto px-4 py-16 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Instantly find real connections in your new city. 🌟
+            We are changing the way people connect. Forever! 🌟
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
             Kairoo helps you meet like-minded people and explore unique places – building real experiences, not just superficial swipes. 💫
