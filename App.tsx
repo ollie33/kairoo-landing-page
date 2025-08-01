@@ -74,7 +74,7 @@ export default function App() {
       <section className="py-16 bg-orange-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            How Kairoo Works ✨
+            Why choose Kairoo?
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -84,10 +84,10 @@ export default function App() {
                 <span className="text-2xl">🤝</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Interest-Based Matching
+                No superficial and endless people swiping. With us you swipe what's important to you
               </h3>
               <p className="text-gray-600">
-                Meet people who truly share your hobbies and passions.
+                Personality based group matching to meet people with similar hobbies and passions
               </p>
             </Card>
 
@@ -97,7 +97,7 @@ export default function App() {
                 <span className="text-2xl">🗺️</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Discover Curated Places & Events
+                Discover Curated places and amazing events
               </h3>
               <p className="text-gray-600">
                 Find unique spots and experiences designed to bring people together.
@@ -110,7 +110,7 @@ export default function App() {
                 <span className="text-2xl">🛡️</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Safe & Authentic Community
+                Enjoy a verified and authentic community
               </h3>
               <p className="text-gray-600">
                 Verified profiles and thoughtful moderation ensure genuine connections.
